@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>1st page of Juicy</title>
+  <link href="https://fonts.googleapis.com/css?family=Geo&display=swap" rel="stylesheet">
+  <script type='text/javascript' src='https://platform-api.sharethis.com/js/sharethis.js#property=5ed011dd2978280013bc9dbb&product=inline-share-buttons&cms=sop' async='async'></script>
+<style>
+
+
+
+
+
+@media screen and (min-width: 600px) {
+  body {
+    background-color: lightgreen;
+    margin:0px;
+  }
+  .topnav{
+    display:block;
+    background-color:black;
+    padding:20px;
+
+  }
+  .topnav-icon{
+    color:white;
+    text-align: center;
+      font-family: 'Geo', sans-serif;
+      font-size: 100px;
+      letter-spacing: 5px;
+  }
+  .image-container .details1{
+    color:orange;
+    text-align:left;
+      font-family: 'Geo', sans-serif;
+      font-size: 60px;
+      letter-spacing: 5px;
+      margin-left: 55px;
+      font-style: oblique;
+      position:relative;
+      animation-name: example;
+      animation-duration: 4s;
+       animation-iteration-count: infinite;
+  }
+  .image-container img{
+    width:100%;
+  }
+  @keyframes example {
+  0% {color: orange;}
+  30% {color: red;}
+  60%{ color:black;}
+  90%{color:white;
+  }
+}
+.fullcover{
+  border-top: 10px solid red;
+  border-bottom: 10px solid red;
+}
+#bar{
+  position: fixed;
+}
+
+}
+
+
+</style>
+</head>
+<body>
+
+<div class="topnav">
+  <p class="topnav-icon"  onclick="mymainlink()">-JUICY-</p>
+</div>
+<div class="sharethis-inline-share-buttons" id="bar"></div>
+  <div class="fullcover">
+<div class="image-container">
+  <p class="details1"  onclick="mylink1()" >Check Out Your Future Partner</p>
+<img src="images/Icon.png" onclick="mylink1()"></img>
+</div>
+</div>
+<script>
+  function mylink1()
+  {
+    location.href="index2.html";
+  }
+  function mymainlink(){
+    location.href="index.html";
+  }
+</script>
+</body>
+</html>
