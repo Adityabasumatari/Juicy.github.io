@@ -1,0 +1,216 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Contact Us Form</title>
+<link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@300&display=swap" rel="stylesheet">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+</head>
+<style>
+@media only screen and (min-width: 800px) {
+.background-container{
+  background-color: white;
+font-family: 'Open Sans', sans-serif;
+font-size: 20px;
+
+
+
+}
+.information-collector{
+  margin-left: 42.5%;
+}
+.button {
+  background-color:lightblue;
+  border: none;
+  color: black;
+  padding: 15px 32px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+  margin: 4px 2px;
+  cursor: pointer;
+}
+}
+
+
+@media only screen and (max-width: 640px) {
+  body {
+    background-color: lightblue;
+    display: flex;
+
+  }
+  .background-container{
+    background-color: white;
+font-family: 'Open Sans', sans-serif;
+  font-size: 20px;
+display: flex;
+flex-wrap: wrap;
+
+
+  justify-content: center
+
+
+  }
+  .information-collector{
+    margin-left:0;
+  }
+
+  .button {
+    background-color:lightblue;
+    border: none;
+    color: black;
+    padding: 15px 32px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    margin: 4px 2px;
+    cursor: pointer;
+  }
+}
+</style>
+</head>
+<body>
+<div class="background-container">
+<h1 style="text-align:center">Contact Us</h1>
+<p style="text-align:center" >Please Fill The Below Details Help Us To Contact You</p>
+<form class="information-collector" method="post">
+  <label for="fname">Title</label>&nbsp;&nbsp;
+   <label for="fname">Full Name</label><br>
+<select size="1.5" style="outline:none;" id="titlevalue">
+    <option value="Mr">Mr</option>
+    <option value="Mrs">Mrs</option>
+    <option value="Ms">Ms</option>
+</select>
+
+<input type="text" placeholder="Enter Your Full Name" style="outline:none;"  id="fullnamevalue"></input><br><br>
+<label for="fname">Email Address</label><br>
+  <input type="email" placeholder="Enter Your Email Address" size="27" style="outline:none;" id="emailvalue" ></input>
+  <br><br>
+<label for="fname">Password</label><br>
+  <input type="password" placeholder="Enter Your Password" size="27" style="outline:none;" id="passvalue"  name="psw" pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}" ></input>
+<br><br>
+<label for="fname">Phone Number</label><br>
+<input type="tel" placeholder="Enter Your Phone number" size="27" style="outline:none;" id="phnovalue" ></input>
+<br><br>
+<label for="fname">Address</label><br>
+<input type="Text" placeholder="Enter Your address" size="27" style="outline:none;" id="addressvalue" ></input>
+
+
+<br><br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+<a  class="button" onclick="uservalue()">Submit</a>
+
+
+
+</form>
+</div>
+
+
+<script>
+  //function for collecting all the user information for validation:
+  function uservalue()
+  {
+    //Value of title:
+    var title=document.getElementById("titlevalue").value;
+    //sessionStorage passing value to one page to another page:
+    sessionStorage.setItem("title", title);
+
+    //----------------------------------------------------------------------------------------------//
+    //Value of fullname:
+    var fullname=document.getElementById("fullnamevalue").value;
+    //sessionStorage passing value to one page to another page:
+    if(fullname=="")
+    {
+      alert("Please fill your full name");
+    }
+    else{
+      sessionStorage.setItem("fullname", fullname);
+
+    }
+
+
+    //value of Email Address:
+    var email=document.getElementById("emailvalue").value;
+    var mailformat = /^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/;
+    //sessionStorage passing value to one page to another page:
+    if(email=="")
+    {
+      alert("Please fill your email address");
+    }
+    else if (email.match(mailformat))
+    {
+      sessionStorage.setItem("emailaddress",email);
+
+    }
+    else{
+      alert("Please check your email address")
+    }
+
+
+
+
+    //value of Password:
+    var password=document.getElementById("passvalue").value;
+    var passwordval=document.getElementById("passvalue").pattern;
+    //sessionStorage passing value to one page to another page
+    if(password=="")
+    {
+      alert("Please check your password");
+    }
+    else if (password.match(passwordval))
+    {
+      sessionStorage.setItem("password", password);
+
+    }
+    else{
+      alert("Must contain at least one number and one uppercase and lowercase letter, and at least 8 or more characters");
+    }
+
+
+
+    //value of Phonenumber:
+    var Phonenumber=document.getElementById("phnovalue").value;
+    var phoneno = /^\d{10}$/;
+    //sessionStorage passing value to one page to another page:
+    if(Phonenumber=="")
+    {
+      alert("Please check your phone number");
+
+    }
+    else if(Phonenumber.match(phoneno))
+    {
+      sessionStorage.setItem("Phonenumber", Phonenumber);
+
+    }
+    else{
+      alert("please re-check your phone number");
+    }
+
+    //value of address
+    var address=document.getElementById("addressvalue").value;
+    //sessionStorage passing value to one page to another page:
+    if(address=="")
+    {
+      alert("Please check your address");
+
+    }
+    else{
+    sessionStorage.setItem("address",address);
+
+  }
+
+  if(address!=="" && fullname!=="" && Phonenumber!=="" && Phonenumber.match(phoneno) &&  password!==""  &&  password.match(passwordval) && email!=="" &&   email.match(mailformat))
+
+  {
+      location.href="index2.html";
+  }
+}
+
+
+
+
+
+</script>
+</body>
+</html>
